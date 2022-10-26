@@ -1,1 +1,1 @@
-alert("LOL")
+gg.alert("LOL")
