@@ -19,7 +19,7 @@ end﻿
 end
 
 function Email()
-ZZ = gg.makeRequest("https://coral.aoml.noaa.gov/mailman/subscribe/cdhc?email=",zalupa).content
+print("https://coral.aoml.noaa.gov/mailman/subscribe/cdhc?email=",zalupa)
 if not ZZ then
 gg.alert("Need Internet Connection!")
 os.exit()
