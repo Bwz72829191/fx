@@ -14,8 +14,120 @@
    }
   </style>
 <body> 
+	<!-- PRELOADER -->
+        <div id='preloader'>
+    <img src="https://i.gifer.com/4HVB.gif">
+</div>
 	<center><button onclick="document.getElementById('id01').style.display='block'" class="btn">Open the Attack Constructor</button></center>
-	<style>
+	<script>
+    // setTimeout(function(){alert('Hi, thank you for visiting our website');},3100);
+	window.onload = function() {
+    let preloader = document.getElementById('preloader');
+    preloader.classList.add('hide-preloader');
+    setInterval(function() {
+          preloader.classList.add('preloader-hidden');
+    },  3000);
+}
+
+    var width = $(window).width(); 
+window.onscroll = function(){
+if ((width >= 1000)){
+    if(document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        $("#header").css("background","#fff");
+        $("#header").css("color","#000");
+        $("#header").css("box-shadow","0px 0px 20px rgba(0,0,0,0.09)");
+        $("#header").css("padding","4vh 4vw");
+        $("#navigation a").hover(function(){
+            $(this).css("border-bottom","2px solid rgb(255, 44, 90)");
+        },function(){
+            $(this).css("border-bottom","2px solid transparent");
+        });
+    }else{
+        $("#header").css("background","transparent");
+        $("#header").css("color","#fff");
+        $("#header").css("box-shadow","0px 0px 0px rgba(0,0,0,0)");
+        $("#header").css("padding","6vh 4vw");
+        $("#navigation a").hover(function(){
+            $(this).css("border-bottom","2px solid #fff");
+        },function(){
+            $(this).css("border-bottom","2px solid transparent");
+        });
+    }
+}
+}
+
+function magnify(imglink){
+    $("#img_here").css("background",`url('${imglink}') center center`);
+    $("#magnify").css("display","flex");
+    $("#magnify").addClass("animated fadeIn");
+    setTimeout(function(){
+        $("#magnify").removeClass("animated fadeIn");
+    },800);
+}
+
+function closemagnify(){
+    $("#magnify").addClass("animated fadeOut");
+    setTimeout(function(){
+        $("#magnify").css("display","none");
+        $("#magnify").removeClass("animated fadeOut");
+        $("#img_here").css("background",`url('') center center`);
+    },800);
+}
+
+setTimeout(function(){
+    $("#loading").addClass("animated fadeOut");
+    setTimeout(function(){
+      $("#loading").removeClass("animated fadeOut");
+      $("#loading").css("display","none");
+    },800);
+},1650);
+
+$(document).ready(function(){
+    $("a").on('click', function(event) {
+      if (this.hash !== "") {
+        event.preventDefault();
+        var hash = this.hash;
+        $('body,html').animate({
+        scrollTop: $(hash).offset().top
+        }, 1800, function(){
+        window.location.hash = hash;
+       });
+       } 
+      });
+  });
+  
+  
+</script>
+<style>
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+#preloader.hide-preloader {
+    animation: hidePreloader 3s;
+}
+
+#preloader.preloader-hidden {
+    display: none;
+}
+
+@keyframes hidePreloader {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
 /* Модальный (фон) */
 .modal {
   display: none; /* Скрыто по умолчанию */
@@ -100,7 +212,7 @@ class="close" title="Закрыть модальный">&times;</span>
       <h3>Bomber</h3>
 <hr>
 <div>
-<label>Example: uhxzg@waterisgone.com\9123549631</label>
+<label>Example of mail: uhxzg@waterisgone.com<br>Example of a number: 9123549631 (without +7)</label>
 <br>
 <br>
 <input type="text" id="email" placeholder="uhxzg@waterisgone.com" class="btn"><br>
@@ -118,7 +230,7 @@ class="close" title="Закрыть модальный">&times;</span>
   </form>
   <script>
   	power = function() {
-						document.write("<center><iframe frameborder='0' src='https://fixxel.tk/bomber/power' width='300' height='300'></iframe></center>");
+						document.write("<center><iframe frameborder='0' src='https://spammer.gq/power' width='300' height='300'></iframe></center>");
 						
 						}
 </script>
