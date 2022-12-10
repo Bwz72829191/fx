@@ -199,9 +199,9 @@ htr = requests.get("https://raw.githubusercontent.com/Bwz72829191/fx/main/HTTP-R
 htt.write(htr)
 os.system("clear")
 #Загрузка tcp-kill
-os.system("rm TCP-Kill.js")
-tck = open('TCP-Kill.js', 'a+', encoding='utf-8')
-tcg = requests.get("https://raw.githubusercontent.com/Bwz72829191/fx/main/TCP-Kill.js").text
+os.system("rm TLS.js")
+tck = open('TLS.js', 'a+', encoding='utf-8')
+tcg = requests.get("https://raw.githubusercontent.com/Bwz72829191/fx/main/TLS.js").text
 tck.write(tcg)
 os.system("clear")
 os.system("python panel.py")
