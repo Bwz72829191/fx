@@ -198,10 +198,20 @@ htt = open('HTTP-RAW.js', 'a+', encoding='utf-8')
 htr = requests.get("https://raw.githubusercontent.com/Bwz72829191/fx/main/HTTP-RAW.js").text
 htt.write(htr)
 os.system("clear")
-#Загрузка tcp-kill
-os.system("rm TLS.js")
-tck = open('TLS.js', 'a+', encoding='utf-8')
-tcg = requests.get("https://raw.githubusercontent.com/Bwz72829191/fx/main/TLS.js").text
-tck.write(tcg)
+#Загрузка httpbypass
+os.system("rm HTTPBYPASS.js")
+tl = open('HTTPBYPASS.js', 'a+', encoding='utf-8')
+tlss = requests.get("https://raw.githubusercontent.com/Bwz72829191/fx/main/HTTPBYPASS.js").text
+tl.write(tlss)
+os.system("clear")
+#Загрузка cc
+os.system("rm cc.py")
+cc = open('cc.py', 'a+', encoding='utf-8')
+ccc = requests.get("https://raw.githubusercontent.com/Bwz72829191/fx/main/cc.py").text
+cc.write(ccc)
+os.system("clear")
+#Загрузка панели
+print("Загрузка панели...")
+time.sleep(3)
 os.system("clear")
 os.system("python panel.py")
