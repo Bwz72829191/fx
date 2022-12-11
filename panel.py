@@ -11,6 +11,17 @@ def two():
 	if '2' in mt :
 		os.system('node HTTPBYPASS.js ' +target+ ' ' +time)
 		
+l1 = ('''
+
+
+
+█▄▄ █▄█   █▀▀ █ ▀▄▀ ▀▄▀ █▀▀ █░░
+█▄█ ░█░   █▀░ █ █░█ █░█ ██▄ █▄▄
+
+https://fixxel.tk/
+''')
+print(l1)
+time.sleep(3)
 print("Выберете метод атаки")
 print("Layer 7 methods")
 print("1. HTTP-RAND")
